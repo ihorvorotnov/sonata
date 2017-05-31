@@ -41,7 +41,31 @@ Following packages are useful, but not mandatory. Depends on the project.
 
 ## Roadmap
 
-- Add instructions about editing `composer.json`
-- Add full support for `.env` with example configs
-- Finalize `wp-config.php`
-- Explain autoloading and namespaces 
+- [x] Add `.gitkeep` files to preserve base directory structure
+- [ ] Add links and descriptions for included plugins and libraries
+- [ ] Add instructions about editing `composer.json`
+- [ ] Add full support for `.env` with example configs
+- [ ] Finalize `wp-config.php`
+- [ ] Explain autoloading and namespaces
+- [ ] Add `WP-CLI` support
+
+## Ideas
+
+Consider using alternative directory layout:
+
+```
+app/
+  content/
+    mu-plugins/
+    plugins/
+    themes/
+    uploads/
+  core/
+config/
+vendor/
+wp-config.php
+```
+
+to move `wp-config.php` and `config/` directory one level up, serving the site from `app/` directory. For better security.
+
+Also, consider adding shell script to automate the manual bits that left (salts, configuration etc)
