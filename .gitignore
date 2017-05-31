@@ -1,0 +1,6 @@
+# PHPStorm
+.idea
+
+# WordPress Core itself
+
+/core
