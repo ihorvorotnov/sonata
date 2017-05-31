@@ -48,6 +48,7 @@ Following packages are useful, but not mandatory. Depends on the project.
 - [ ] Finalize `wp-config.php`
 - [ ] Explain autoloading and namespaces
 - [ ] Add `WP-CLI` support
+- [ ] Add `.editorconfig` support (PSR or WordPress?)
 
 ## Ideas
 
