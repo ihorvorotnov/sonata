@@ -1,0 +1,54 @@
+{
+  "name": "ihorvorotnov/sonata",
+  "description": "WordPress project powered by Composer",
+  "type": "project",
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "Ihor Vorotnov",
+      "email": "ihor.vorotnov@gmail.com",
+      "homepage": "https://ihorvorotnov.com/"
+    }
+  ],
+  "require": {
+    "composer/installers": "^v1.3",
+    "johnpbloch/wordpress": "^4.7",
+    "roots/wp-password-bcrypt": "^1.0",
+    "vlucas/phpdotenv": "^2.4"
+  },
+  "require-dev": {
+    "johnbillion/query-monitor": "^2.13",
+    "rarst/laps": "^1.4",
+    "norcross/airplane-mode": "^0.2.3",
+    "mgargano/non-production-robots-ignore": "^0.1.4",
+    "johnbillion/user-switching": "^1.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sonata\\": "app"
+    }
+  },
+  "extra": {
+    "wordpress-install-dir": "core",
+    "installer-paths": {
+      "app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "app/mu-plugins/{$name}": [
+        "type:wordpress-muplugin"
+      ],
+      "app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  }
+}
