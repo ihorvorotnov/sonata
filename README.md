@@ -2,6 +2,8 @@
 
 Orchestrate your new WordPress project with Composer.
 
+Latest version: [**0.1.0**](https://github.com/ihorvorotnov/sonata/releases/tag/0.1.0)
+
 ## Usage
 
 `composer create-project ihorvorotnov/sonata project_name`
@@ -12,25 +14,30 @@ Orchestrate your new WordPress project with Composer.
 - Better password hashing library (uses `bcrypt`)
 - Support for `.env` configuration files (WIP)
 - Some plugins for development (as Composer dependencies):
-	- Query Monitor
-	- Laps
-	- Non-Production Robots Ignore
-	- User Switching
-	- Airplane Mode
+	- [Query Monitor](https://packagist.org/packages/johnbillion/query-monitor) by @johnbillion
+	- [Laps](https://packagist.org/packages/rarst/laps) by @Rarst
+	- [Non-Production Robots Ignore](https://packagist.org/packages/mgargano/non-production-robots-ignore) by @matgargano
+	- [User Switching](https://packagist.org/packages/johnbillion/user-switching) by @johnbillion
+	- [Airplane](https://packagist.org/packages/norcross/airplane-mode) Mode by @norcross
+
+### Project directory layout
 
 ```
-- app/ # Custom wp-content directory
-  - mu-plugins/
-  - plugins/
-  - themes/
-  - uploads/
-- core/ # WordPress core
-- .gitignore
-- composer.json
-- index.php
-- LICENSE
-- README.md
-- wp-config.php
+- app
+  + languages
+  + mu-plugins
+  + plugins
+  + themes
+  + uploads
++ core
++ vendor
+⚬ .gitignore
+⚬ composer.json
+⚬ composer.lock
+⚬ index.php
+⚬ LICENSE
+⚬ README.md
+⚬ wp-config.php
 ```
 
 ## Additional Composer packages
@@ -42,7 +49,10 @@ Following packages are useful, but not mandatory. Depends on the project.
 ## Roadmap
 
 - [x] Add `.gitkeep` files to preserve base directory structure
-- [ ] Add links and descriptions for included plugins and libraries
+- [x] Remove `.gitkeep` files, replace them with WP's empty `index.php` files
+- [x] Add links for included plugins and libraries
+- [x] Add complete set of rules to `.gitignore`
+- [ ] Add brief descriptions of included plugins and libraries 
 - [ ] Add instructions about editing `composer.json`
 - [ ] Add full support for `.env` with example configs
 - [ ] Finalize `wp-config.php`
