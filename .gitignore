@@ -1,6 +1,53 @@
-# PHPStorm
-.idea
+###
+# Ignored files and directories
+###
 
-# WordPress Core itself
+# PhpStorm
+/.idea
 
+# Git releases
+/release
+
+# Composer packages
+/vendor
+
+# Local environment
+/.env
+
+# WordPress core
 /core
+
+# Additional WordPress and 3rd party code, languages and
+# everything else that shouldn't be versioned
+/app/languages
+/app/mu-plugins
+/app/plugins
+/app/themes
+/app/upgrade
+/app/uploads
+
+# Keep tracking WordPress' empty index.php files
+!/app/languages/index.php
+!/app/mu-plugins/index.php
+!/app/plugins/index.php
+!/app/themes/index.php
+!/app/uploads/index.php
+
+# Query Monitor's custom DB class symlink
+/app/db.php
+
+# Local debug log
+/app/debug.log
+
+###
+# Excluded files and directories
+###
+
+# Custom mu-plugins
+#!/app/mu-plugins/{plugin-file}
+
+# Custom plugins
+#!/app/plugins/{plugin-dir}
+
+# Custom themes
+#!/app/themes/{theme-dir}
