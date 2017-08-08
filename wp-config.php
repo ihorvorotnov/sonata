@@ -8,9 +8,38 @@
  */
 
 /**
+ * Absolute path to the WordPress directory.
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/core/' );
+}
+
+/**
+ * Absolute path to the project root directory, additionally to `ABSPATH`.
+ */
+define( 'ROOTPATH', dirname( __FILE__ ) );
+
+/**
  * Composer's autoloader, used throughout the project
  */
-require_once( __DIR__ . '/vendor/autoload.php' );
+require_once( ROOTPATH . '/vendor/autoload.php' );
+
+/**
+ * Load environmental variables from `.env` file.
+ */
+$dotenv = new Dotenv\Dotenv( __DIR__ );
+$dotenv->load();
+$dotenv->required( [ 'APP_URL', 'DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'DB_PREFIX' ] );
+
+/**
+ * Define current environment for use later.
+ */
+define( 'WP_ENV', getenv( 'APP_ENV' ) );
+
+/**
+ * Load environment specific config.
+ */
+require_once( ROOTPATH . '/config/' . WP_ENV . '.php' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -21,59 +50,53 @@ require_once( __DIR__ . '/vendor/autoload.php' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY', '' );
-define( 'SECURE_AUTH_KEY', '' );
-define( 'LOGGED_IN_KEY', '' );
-define( 'NONCE_KEY', '' );
-define( 'AUTH_SALT', '' );
-define( 'SECURE_AUTH_SALT', '' );
-define( 'LOGGED_IN_SALT', '' );
-define( 'NONCE_SALT', '' );
+define( 'AUTH_KEY',         getenv( 'AUTH_KEY' ) );
+define( 'SECURE_AUTH_KEY',  getenv( 'SECURE_AUTH_KEY' ) );
+define( 'LOGGED_IN_KEY',    getenv( 'LOGGED_IN_KEY' ) );
+define( 'NONCE_KEY',        getenv( 'NONCE_KEY' ) );
+define( 'AUTH_SALT',        getenv( 'AUTH_SALT' ) );
+define( 'SECURE_AUTH_SALT', getenv( 'SECURE_AUTH_SALT' ) );
+define( 'LOGGED_IN_SALT',   getenv( 'LOGGED_IN_SALT' ) );
+define( 'NONCE_SALT',       getenv( 'NONCE_SALT' ) );
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
+ * WordPress Database connection details.
  */
-$table_prefix = 'wp_';
+define( 'DB_NAME',          getenv( 'DB_NAME' ) );
+define( 'DB_USER',          getenv( 'DB_USER' ) );
+define( 'DB_PASSWORD',      getenv( 'DB_PASSWORD' ) );
+define( 'DB_HOST',          getenv( 'DB_HOST' ) );
+define( 'DB_CHARSET',       'utf8' );
+define( 'DB_COLLATE',       '' );
 
-define( 'DB_NAME', '' );
-define( 'DB_USER', 'homestead' );
-define( 'DB_PASSWORD', 'secret' );
-define( 'DB_HOST', 'localhost' );
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', '' );
+$table_prefix =             getenv( 'DB_PREFIX' );
 
 /**
- * Dynamic home and site URLs to handle both websites in all environments.
+ * Dynamic URLs and paths.
  */
-define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/core' );
-define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] );
+define( 'WP_HOME',          getenv( 'APP_URL' ) );
+define( 'WP_SITEURL',       getenv( 'APP_URL' ) . '/core' );
 
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/app' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/app' );
+define( 'WP_CONTENT_DIR',   ROOTPATH . '/app' );
+define( 'WP_CONTENT_URL',   getenv( 'APP_URL' ) . '/app' );
 
 /**
- * Debugging
- *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
+ * Additional configuration constants.
  */
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_DISPLAY', true );
-define( 'WP_DEBUG_LOG', true );
-define( 'SCRIPT_DEBUG', false );
-define( 'SAVEQUERIES', true );
-define( 'QM_HIDE_SELF', true );
-
-define( 'WP_ALLOW_REPAIR', true );
+define( 'AUTOMATIC_UPDATER_DISABLED',   true );
+define( 'DISALLOW_FILE_EDIT',           true );
+define( 'FORCE_SSL_ADMIN',              true );
+define( 'IMAGE_EDIT_OVERWRITE',         true );
+define( 'IMAGE_JPEG_QUALITY',           80 );
 
 /**
- * Absolute path to the WordPress directory.
+ * Memcached object cache backend.
  */
-if ( ! defined( 'ABSPATH' ) ) {
-    define( 'ABSPATH', dirname( __FILE__ ) . '/core/' );
+if ( ! empty( getenv( 'MEMCACHED_HOST' ) ) && ! empty( getenv( 'MEMCACHED_PORT' ) ) ) {
+	$memcached_servers = [
+		'default' => [ getenv( 'MEMCACHED_HOST' ) . ':' . getenv( 'MEMCACHED_PORT' ) ],
+	];
 }
 
 /**
