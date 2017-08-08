@@ -11,6 +11,10 @@
       "homepage": "https://ihorvorotnov.com/"
     }
   ],
+  "keywords": [ "sonata", "skeleton", "wordpress", "stack", "composer", "wp" ],
+  "support": {
+    "issues": "https://github.com/ihorvorotnov/sonata/issues"
+  },
   "require": {
     "composer/installers": "^v1.3",
     "johnpbloch/wordpress": "^4.7",
