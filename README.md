@@ -2,7 +2,7 @@
 
 Orchestrate your new WordPress project with Composer.
 
-Latest version: [**0.1.0**](https://github.com/ihorvorotnov/sonata/releases/tag/0.1.0)
+Latest version: [**1.0.0**](https://github.com/ihorvorotnov/sonata/releases/tag/1.0.0)
 
 ## Requirements
 
