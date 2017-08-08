@@ -33,6 +33,11 @@
   "config": {
     "vendor-dir": "vendor"
   },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"copy('.env.example', '.env');\""
+    ]
+  },
   "autoload": {
     "psr-4": {
       "Sonata\\": "app"
