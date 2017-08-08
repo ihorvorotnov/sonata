@@ -37,7 +37,8 @@
     }
   ],
   "config": {
-    "vendor-dir": "vendor"
+    "vendor-dir": "vendor",
+    "classmap-authoritative": true
   },
   "scripts": {
     "post-create-project-cmd": [
