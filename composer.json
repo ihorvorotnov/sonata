@@ -39,7 +39,7 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "php -r \"copy('.env.example', '.env');\""
+      "wp dotenv init --template=.env.example --with-salts"
     ]
   },
   "autoload": {
