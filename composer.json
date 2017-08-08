@@ -41,7 +41,8 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "wp dotenv init --template=.env.example --with-salts"
+      "wp dotenv init --template=.env.example --with-salts",
+      "ln -s `pwd`/core/wp-content/themes/twentyseventeen/ `pwd`/app/themes/twentyseventeen"
     ]
   },
   "autoload": {
