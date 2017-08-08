@@ -16,6 +16,8 @@
     "issues": "https://github.com/ihorvorotnov/sonata/issues"
   },
   "require": {
+    "php": ">=7.0",
+    "ext-gettext": "*",
     "composer/installers": "^v1.3",
     "johnpbloch/wordpress": "^4.7",
     "roots/wp-password-bcrypt": "^1.0",
