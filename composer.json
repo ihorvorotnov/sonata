@@ -2,7 +2,6 @@
   "name": "ihorvorotnov/sonata",
   "description": "WordPress project powered by Composer",
   "type": "project",
-  "version": "0.1.0",
   "license": "GPL-2.0",
   "authors": [
     {
