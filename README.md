@@ -37,6 +37,9 @@ composer update
 - Latest stable WordPress, as a Composer dependency
 - Better password hashing library (uses `bcrypt`)
 - Support for `.env` configuration files
+- Automatically generated WordPress salts in `.env` using WP-CLI
+- Optimized autoloader by default
+- Symlinked Twenty Seventeen theme
 - Some plugins for development (as Composer dependencies):
 	- [Query Monitor](https://packagist.org/packages/johnbillion/query-monitor) by @johnbillion
 	- [Laps](https://packagist.org/packages/rarst/laps) by @Rarst
@@ -78,9 +81,10 @@ Following packages are useful, but not mandatory. Depends on the project.
 - [x] Add complete set of rules to `.gitignore`
 - [x] Add `.env.example`
 - [x] Add composer post-install action to rename `env.example` to `.env`
-- [ ] Add full support for `.env` with example configs
-- [ ] Finalize `wp-config.php`
+- [x] Add full support for `.env` with example configs
+- [x] Finalize `wp-config.php`
 - [x] Add `WP-CLI` support
+- [ ] Cleanup README, start using GitHub issues
 - [ ] Add brief descriptions of included plugins and libraries 
 - [ ] Add instructions about editing `composer.json`
 - [ ] Explain autoloading and namespaces
