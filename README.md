@@ -22,8 +22,19 @@ composer create-project ihorvorotnov/sonata project_name
 **Install new package or WordPress plugin**
 
 ```
-composer require author/package
-composer require wpackagist/plugin-name
+composer require vendor/package
+
+composer require wpackagist-plugin/{plugin-slug}
+```
+
+**Update specific package, WordPress or a plugin to latest version**
+
+```
+composer update vendor/package
+
+composer update johnpbloch/wordpress
+composer update johnbillion/query-monitor
+composer wpackagist-plugin/{plugin-slug}
 ```
 
 **Update all packages to latest versions**
@@ -58,13 +69,13 @@ composer update
   + uploads
 + core
 + vendor
-⚬ .gitignore
-⚬ composer.json
-⚬ composer.lock
-⚬ index.php
-⚬ LICENSE
-⚬ README.md
-⚬ wp-config.php
+• .gitignore
+• composer.json
+• composer.lock
+• index.php
+• LICENSE
+• README.md
+• wp-config.php
 ```
 
 ## Additional Composer packages
@@ -72,39 +83,3 @@ composer update
 Following packages are useful, but not mandatory. Depends on the project.
 
 `@todo To be done later`
-
-## Roadmap
-
-- [x] Add `.gitkeep` files to preserve base directory structure
-- [x] Remove `.gitkeep` files, replace them with WP's empty `index.php` files
-- [x] Add links for included plugins and libraries
-- [x] Add complete set of rules to `.gitignore`
-- [x] Add `.env.example`
-- [x] Add composer post-install action to rename `env.example` to `.env`
-- [x] Add full support for `.env` with example configs
-- [x] Finalize `wp-config.php`
-- [x] Add `WP-CLI` support
-- [ ] Cleanup README, start using GitHub issues
-- [ ] Add brief descriptions of included plugins and libraries 
-- [ ] Add instructions about editing `composer.json`
-- [ ] Explain autoloading and namespaces
-- [ ] Add `.editorconfig` support (PSR or WordPress?)
-
-## Ideas
-
-Consider using alternative directory layout:
-
-```
-app/
-  content/
-    mu-plugins/
-    plugins/
-    themes/
-    uploads/
-  core/
-config/
-vendor/
-wp-config.php
-```
-
-to move `wp-config.php` and `config/` directory one level up, serving the site from `app/` directory. For better security.
