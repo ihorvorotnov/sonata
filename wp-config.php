@@ -22,7 +22,7 @@ define( 'ROOTPATH', __DIR__ );
 /**
  * Composer's autoloader, used throughout the project
  */
-require_once( ROOTPATH . '/vendor/autoload.php' );
+require_once ROOTPATH . '/vendor/autoload.php';
 
 /**
  * Load environmental variables from `.env` file.
@@ -39,7 +39,7 @@ define( 'WP_ENV', getenv( 'APP_ENV' ) );
 /**
  * Load environment specific config.
  */
-require_once( ROOTPATH . '/config/' . WP_ENV . '.php' );
+require_once ROOTPATH . '/config/' . WP_ENV . '.php';
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -103,4 +103,4 @@ if ( ! empty( getenv( 'MEMCACHED_HOST' ) ) && ! empty( getenv( 'MEMCACHED_PORT' 
 /**
  * Sets up WordPress vars and included files.
  */
-require_once( ABSPATH . 'wp-settings.php' );
+require_once ABSPATH . 'wp-settings.php';
