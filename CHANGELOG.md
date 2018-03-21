@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## 1.1.0 - 2018-03-22
+
+### Added
+
+- Use `roave/security-advisories` package to prevent installing packages with known vulnerabilities
+- Add `WP_CACHE_KEY_SALT` constant to allow object cache isolation
+
+### Changed
+
+- Update `rarst/laps` package to next major version (2.0)
+- Update all packages, sync `composer.lock`
+- Micro-optimisation: replace `dirname( __FILE__ )` with `__DIR__`
+- Remove unnecessary parentheses from language constructs (`require`, `require_once`)
+- Update README
+
 ## 1.0.0 - 2017-08-08
 
 ### Added
