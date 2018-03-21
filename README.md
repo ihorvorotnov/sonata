@@ -2,12 +2,12 @@
 
 Orchestrate your new WordPress project with Composer.
 
-Latest version: [**1.0.0**](https://github.com/ihorvorotnov/sonata/releases/tag/1.0.0)
+Latest version: [**1.1.0**](https://github.com/ihorvorotnov/sonata/releases/tag/1.1.0)
 
 ## Requirements
 
-- PHP 7.0 and newer. Because it's 2017, you know
-- Native PHP `gettext` extension
+- PHP 7.0 and newer. Because it's 2018, you know
+- Native PHP `gettext` extension (will be used in future versions)
 - [Composer](https://getcomposer.org/), obviously
 - [WP-CLI](http://wp-cli.org/)
 
@@ -56,7 +56,9 @@ composer update
 	- [Laps](https://packagist.org/packages/rarst/laps) by @Rarst
 	- [Non-Production Robots Ignore](https://packagist.org/packages/mgargano/non-production-robots-ignore) by @matgargano
 	- [User Switching](https://packagist.org/packages/johnbillion/user-switching) by @johnbillion
-	- [Airplane](https://packagist.org/packages/norcross/airplane-mode) Mode by @norcross
+	- [Airplane Mode](https://packagist.org/packages/norcross/airplane-mode) by @norcross
+- Prevent installing packages with known vulnerabilities with [SecurityAdvisories](https://packagist.org/packages/roave/security-advisories) by @Roave
+- Ready for Memcached object cache, including custom `WP_CACHE_KEY_SALT`
 
 ### Project directory layout
 
@@ -67,14 +69,21 @@ composer update
   + plugins
   + themes
   + uploads
+  • debug.log
+- config
+  • local.php
+  • production.php
+  • staging.php  
 + core
 + vendor
+• .env
+• .env.example
 • .gitignore
 • composer.json
 • composer.lock
 • index.php
 • LICENSE
-• README.md
+• wp-cli.yml
 • wp-config.php
 ```
 
