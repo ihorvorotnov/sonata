@@ -11,13 +11,13 @@
  * Absolute path to the WordPress directory.
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/core/' );
+	define( 'ABSPATH', __DIR__ . '/core/' );
 }
 
 /**
  * Absolute path to the project root directory, additionally to `ABSPATH`.
  */
-define( 'ROOTPATH', dirname( __FILE__ ) );
+define( 'ROOTPATH', __DIR__ );
 
 /**
  * Composer's autoloader, used throughout the project
