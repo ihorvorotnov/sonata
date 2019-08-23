@@ -27,7 +27,7 @@
     "johnbillion/query-monitor": "^2.13",
     "rarst/laps": "^2.0",
     "norcross/airplane-mode": "^0.2.3",
-    "mgargano/non-production-robots-ignore": "^0.1.4",
+    "mgargano/non-production-robots-ignore": "^0.2.0",
     "johnbillion/user-switching": "^1.0"
   },
   "repositories": [
