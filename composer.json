@@ -24,7 +24,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
-    "johnbillion/query-monitor": "^2.13",
+    "johnbillion/query-monitor": "^3.3",
     "rarst/laps": "^2.0",
     "norcross/airplane-mode": "^0.2.3",
     "mgargano/non-production-robots-ignore": "^0.1.4",
